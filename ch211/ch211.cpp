@@ -1,62 +1,36 @@
 ﻿#include <iostream>
 using namespace std;
 
-
-////////
-
 int sum(int arr[]);
 double Avr(int isum);
-
-int main()
-{
-    int iArr[5] = { 0 };
-    int iSum = 0;
-    double dAvr = 0.0;
-
-    for (int i = 0; i < 5; i++)
-    {
-        cin >> iArr[i];
-    }
-    iSum = sum(iArr);
-    dAvr = Avr(iSum);
-    cout << "합계 : " << iSum << " 평균 : " << dAvr;
-
-    return 0;
-}
-
-int sum(int arr[])
-{
-    int isum = 0;
-    for (int i = 0; i < 5; i++)
-    {
-        isum += arr[i];
-    }
-    return isum;
-}
-
-double Avr(int isum)
-{
-    double davr = 0.0;
-    davr = (double)isum / 5;
-    return davr;
-}
-
-//////////
 
 void Asc(int arr[], int iCount);
 void Desc(int arr[], int iCount);
 
 int main()
 {
+    int Arr[5] = { 0 };
+    int iSum = 0;
+    double dAvr = 0.0;
+
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> Arr[i];
+    }
+    iSum = sum(Arr);
+    dAvr = Avr(iSum);
+    cout << "합계 : " << iSum << " 평균 : " << dAvr << endl;
+
+
     int iCount = 5;
     int iCase = 0;
     cout << "1. 오름차순, 2.내림차순 중에 선택하세요" << endl;
     cin >> iCase;
 
     int iArr[5] = { 0 };
+    cout << "정렬할 숫자 5개를 입력하세요" << endl;
     for (int i = 0; i < iCount; i++)
     {
-        cout << "정렬할 숫자 5개를 입력하세요" << endl;
         cin >> iArr[i];
     }
 
@@ -80,6 +54,25 @@ int main()
     }
     return 0;
 }
+
+int sum(int arr[])
+{
+    int isum = 0;
+    for (int i = 0; i < 5; i++)
+    {
+        isum += arr[i];
+    }
+    return isum;
+}
+
+double Avr(int isum)
+{
+    double davr = 0.0;
+    davr = (double)isum / 5;
+    return davr;
+}
+
+
 
 void Asc(int arr[], int iCount)
 {
